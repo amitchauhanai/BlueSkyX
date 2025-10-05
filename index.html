@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUESKYX</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+       
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <img src="NASA-Logo-Large.png" alt="BLUESKYX logo" class="logo-img">
+          <div class="logo-text">
+            <div class="logo-title">BLUESKYX</div>
+            <div class="logo-sub">Ocean Visualization Studio</div>
+          </div>
+        </div>
+
+        <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#lab">LAB</a></li>
+            <li><a href="#vr">LAUNCH VR</a></li>
+            <li><a href="#login">LOGIN</a></li>
+        </ul>
+    </nav>
+   
+    <video autoplay muted loop playsinline preload="auto" class="bg-video" id="appBgVideo">
+      <source src="earth 2.mp4" type="video/mp4">
+    </video>
+
+    <header>
+      <div class="header-content">
+        <h1>BLUESKYX</h1>
+        <p class="lead">Explore ocean data & immersive visualizations in VR</p>
+        <a href="#EN" class="cta-button">Explore NOW →</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="EN" class="section hero-section">
+        <div class="container">
+          <h2>Welcome to BLUESKYX</h2>
+          <p>We create immersive ocean visualizations and interactive VR experiences for research and education.</p>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h3>About Us</h3>
+          <p>BLUESKYX is an innovative VR experience that transforms NASA's satellite data into a captivating, narrative-driven adventure. Users embody a water molecule, traveling from ocean depths to atmospheric heights, exploring real-time visualizations of ocean health, sea level changes, and climate interconnections. This 3–5 minute immersive story educates non-experts on Earth's dynamic systems, blending science with emotional storytelling to foster environmental awareness.</p>
+          <a class="cta-small" href="#vr">Experience the story (3–5 min)</a>
+        </div>
+      </section>
+
+      <!-- Project / Proposal Details -->
+      <section id="project" class="section">
+        <div class="container">
+          <h3>Project Overview</h3>
+          <p>BlueSkyX is an innovative VR experience that transforms NASA's satellite data into a captivating, narrative-driven adventure. Users embody a water molecule, traveling from ocean depths to atmospheric heights, exploring real-time visualisations of ocean health, sea level changes, and climate interconnections. This 3–5 minute immersive story educates non-experts on Earth's dynamic systems, blending science with emotional storytelling to foster environmental awareness.</p>
+
+          <h4>Key Points</h4>
+          <ul>
+            <li>Research suggests that VR can enhance understanding of complex environmental data by making it interactive and visceral, though adoption remains limited by hardware accessibility.</li>
+            <li>Narrative-focused VR experiences can build stronger emotional connections to issues like ocean conservation; evidence is emerging and depends on user engagement.</li>
+            <li>Integrating multiple datasets provides richer context, but data accessibility challenges persist—highlighting the need for inclusive design.</li>
+          </ul>
+
+          <h4>Differentiation from Existing Solutions</h4>
+          <p>While tools like Google Earth VR and apps such as The Hydrous provide exploratory ocean views and marine simulations, BlueSkyX stands out by offering a guided narrative arc using NASA-specific datasets (e.g., PACE for plankton, SWOT for water topography). Rather than prioritizing scientific analysis, BlueSkyX focuses on storytelling for broad audiences.</p>
+
+          <h4>Problem-Solving Approach</h4>
+          <p>BlueSkyX addresses the inaccessibility of remote sensing data by translating it into intuitive visuals and interactions, enabling users to "experience" phenomena like rising sea levels or plankton blooms. This democratizes NASA data, turning abstract numbers into memorable stories that inspire action.</p>
+
+          <h4>Unique Selling Proposition (USP)</h4>
+          <p>Interactive branching narratives where user choices reveal data impacts (e.g., pollution effects on biodiversity), combined with spatial audio synced to data trends, create a personalized, emotionally resonant experience not found in static VR explorers.</p>
+
+          <h4>Features</h4>
+          <ol>
+            <li>Guided Narrative Mode: A 3–5 minute story arc with voiceover, spatial audio, and animations based on NASA data.</li>
+            <li>Free Exploration Mode: Post-narrative sandbox for users to navigate data-driven environments at their pace.</li>
+            <li>Interactive Data Layers: Gesture-based interactions to peel back visuals and reveal metrics like ocean temperature or biodiversity.</li>
+            <li>Accessibility Options: Subtitles, color-blind palettes, seated/standing modes, and audio descriptions.</li>
+            <li>Multi-Dataset Integration: Combines PACE plankton visuals, SWOT water height maps, and GRACE-FO gravity data for layered storytelling.</li>
+            <li>Educational Overlays: Subtle credits and pop-ups acknowledging data sources without disrupting immersion.</li>
+            <li>Fallback Versions: WebXR or 360-video alternatives for non-VR users.</li>
+            <li>Haptic Feedback: Optional vibrations syncing with events like currents or storms.</li>
+          </ol>
+
+          <h4>Technologies</h4>
+          <ul>
+            <li>VR Development: Unity Engine with XR Interaction Toolkit (Meta Quest, HTC Vive).</li>
+            <li>Data Access: NASA Earthdata APIs (CMR, OPeNDAP) to fetch PACE, SWOT, GRACE-FO datasets.</li>
+            <li>Visualization: Shader Graph, particle systems, SVS assets as textures/meshes.</li>
+            <li>Audio: FMOD or Unity Audio for spatial soundscapes.</li>
+            <li>Interaction: Oculus SDK for hand/eye tracking; WebXR fallback.</li>
+            <li>Optimization: LOD, async loading to target 90 FPS on consumer hardware.</li>
+            <li>Tools: Blender for 3D asset prep.</li>
+          </ul>
+
+          <h4>Architecture & Process</h4>
+          <p>Architecture and process diagrams can be added here. (Placeholders below for visuals.)</p>
+          <div class="diagram-placeholders">
+            <div class="diagram">[Process Flow Diagram Placeholder]</div>
+            <div class="diagram">[Architecture Diagram Placeholder]</div>
+          </div>
+
+          <h4>Prototype Summary</h4>
+          <p>BlueSkyX lets users explore Earth’s water cycle in VR. Users choose narrative or free mode, interact with data layers, and experience oceans, skies, and climate changes with immersive visuals and controls. WebXR fallbacks ensure broad accessibility.</p>
+        </div>
+      </section>
+
+      <section id="lab" class="section">
+        <div class="container">
+          <h3>Lab</h3>
+          <p>Our lab builds visualizations, predictive models, and interactive demos. Below is a preview of NASA's Scientific Visualization Studio (SVS). If the preview is blocked, use the link to open the full site in a new tab.</p>
+
+          <div class="lab-embed">
+            <iframe id="labPreview" src="https://svs.gsfc.nasa.gov/webapps/hyperweb/index.html" title="NASA SVS Preview" frameborder="0" loading="lazy"></iframe>
+            <div id="labFallback" class="lab-fallback" style="display:none;">
+              <p>Preview unavailable (the site may block embedding). Open the lab in a new tab:</p>
+              <a class="cta-small" href="https://svs.gsfc.nasa.gov/webapps/hyperweb/index.html" target="_blank" rel="noopener">Open NASA SVS</a>
+            </div>
+          </div>
+
+          <a class="cta-small" href="#lab">View Lab</a>
+        </div>
+      </section>
+
+      <section id="vr" class="section">
+        <div class="container">
+          <h3>Launch VR</h3>
+          <p>Experience the ocean in virtual reality. Use the videos below as immersive previews or click "Fullscreen VR" to view larger.</p>
+
+          <div class="vr-video">
+            <video id="vrVideo" class="video-player" controls playsinline preload="metadata" poster="NASA-Logo-Large.png">
+              <source src="MC03_stage3_GMAO_precipitation_2048x1024_en.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="vr-controls">
+              <button id="enterFull" class="cta-small">Fullscreen VR</button>
+              <a class="cta-small" href="MC03_stage3_GMAO_precipitation_2048x1024_en.mp4" download>Download Video</a>
+            </div>
+
+            <div id="vrPlayOverlay" class="video-overlay" aria-hidden="true" style="display:none;">
+              <button id="vrPlayBtn" class="cta-button">Play Preview</button>
+            </div>
+          </div>
+
+          <!-- Additional video provided by user -->
+          <div class="vr-video second">
+            <video id="vrVideo2" class="video-player" controls playsinline preload="metadata" poster="NASA-Logo-Large.png">
+              <source src="InShot_20251006_002925460.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="vr-controls">
+              <button id="enterFull2" class="cta-small">Fullscreen VR</button>
+              <a class="cta-small" href="InShot_20251006_002925460.mp4" download>Download Video</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="login" class="section">
+        <div class="container">
+          <h3>Login</h3>
+          <p>Sign in to access private datasets and save your projects.</p>
+          <a class="cta-small" href="#login">Sign In</a>
+        </div>
+      </section>
+
+      <section id="data" class="section">
+        <div class="container">
+          <h3>Data Explorer</h3>
+          <p>Interactive preview of <strong>lakeice-measurements.xlsx</strong>. The page will parse the spreadsheet, display the first sheet as a table and plot the first numeric column against the first column as labels.</p>
+
+          <div class="data-actions">
+            <button id="reloadData" class="cta-small">Reload Data</button>
+            <a class="cta-small" href="lakeice-measurements.xlsx" download>Download XLSX</a>
+          </div>
+
+          <div id="dataArea">
+            <div id="dataTableWrap"></div>
+            <canvas id="dataChart" style="max-width:100%; height:360px; margin-top:18px;"></canvas>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 BLUESKYX — Ocean Visualization Studio</p>
+      </div>
+    </footer>
+
+<!-- Moved Explore NOW fixed bottom button (kept for legacy) -->
+<a href="#EN" class="explore-now">Explore NOW -></a>
+
+<script>
+  (function(){
+    const bg = document.getElementById('appBgVideo');
+    if(!bg) return;
+
+    // Ensure attributes required for autoplay
+    bg.muted = true;
+    bg.setAttribute('muted', '');
+    bg.playsInline = true;
+    bg.setAttribute('playsinline', '');
+    bg.preload = 'auto';
+    bg.load();
+
+    const overlayId = 'video-play-overlay';
+
+    function createOverlay(){
+      if(document.getElementById(overlayId)) return;
+      const overlay = document.createElement('div');
+      overlay.id = overlayId;
+      Object.assign(overlay.style, {
+        position: 'fixed', inset: '0', display: 'flex',
+        alignItems: 'center', justifyContent: 'center',
+        zIndex: 1200, background: 'transparent', pointerEvents: 'auto'
+      });
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = 'Play background';
+      Object.assign(btn.style, {
+        background: 'rgba(0,0,0,0.75)', color: '#fff', border: 'none',
+        padding: '12px 18px', borderRadius: '8px', cursor: 'pointer',
+        fontFamily: 'Poppins, sans-serif', fontSize: '16px'
+      });
+
+      btn.addEventListener('click', async () => {
+        const started = await attemptPlay();
+        if (started) removeOverlay();
+      });
+
+      overlay.appendChild(btn);
+      document.body.appendChild(overlay);
+    }
+
+    function removeOverlay(){
+      const o = document.getElementById(overlayId);
+      if(o) o.remove();
+    }
+
+    async function attemptPlay(){
+      try {
+        const playPromise = bg.play();
+        if (playPromise !== undefined) await playPromise;
+        bg.classList.add('no-pointer');
+        removeOverlay();
+        return true;
+      } catch (err) {
+        // Autoplay prevented
+        return false;
+      }
+    }
+
+    // Try autoplay on DOM ready, and retry shortly after
+    document.addEventListener('DOMContentLoaded', async () => {
+      let ok = await attemptPlay();
+      if (ok) return;
+      // second attempt after brief delay
+      setTimeout(async () => {
+        ok = await attemptPlay();
+        if (!ok) createOverlay();
+      }, 500);
+    });
+
+    // Try to resume when tab becomes visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && bg.paused) attemptPlay();
+    });
+
+    // Play on first user interaction if autoplay blocked
+    ['click','touchstart','pointerdown','keydown'].forEach(evt => {
+      const handler = async function once(){
+        if (bg && bg.paused) await attemptPlay();
+        window.removeEventListener(evt, once);
+      };
+      window.addEventListener(evt, handler, {passive:true});
+    });
+
+    // Keep video from intercepting pointer events when playing
+    bg.addEventListener('play', () => bg.classList.add('no-pointer'));
+    bg.addEventListener('pause', () => bg.classList.remove('no-pointer'));
+  })();
+
+  // Mobile menu toggle
+  (function(){
+    const btn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if(!btn || !navLinks) return;
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('open');
+    });
+  })();
+
+  // Lab section iframe fallback
+  (function(){
+    const iframe = document.getElementById('labPreview');
+    const fallback = document.getElementById('labFallback');
+    if(!iframe || !fallback) return;
+
+    // Check if iframe loads successfully
+    iframe.addEventListener('load', () => {
+      // Hide fallback if iframe has loaded
+      fallback.style.display = 'none';
+    });
+
+    // Simple error detection: assume error if iframe is empty after 3 seconds
+    setTimeout(() => {
+      if(iframe.contentDocument.body.innerHTML.trim() === ''){
+        fallback.style.display = 'block';
+      }
+    }, 3000);
+  })();
+
+  // Fullscreen handlers for VR videos
+  (function(){
+    function requestFull(el){
+      if(!el) return;
+      if (el.requestFullscreen) return el.requestFullscreen();
+      if (el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
+      if (el.msRequestFullscreen) return el.msRequestFullscreen();
+    }
+
+    const btn1 = document.getElementById('enterFull');
+    const btn2 = document.getElementById('enterFull2');
+    const v1 = document.getElementById('vrVideo');
+    const v2 = document.getElementById('vrVideo2');
+
+    if(btn1 && v1) btn1.addEventListener('click', () => requestFull(v1));
+    if(btn2 && v2) btn2.addEventListener('click', () => requestFull(v2));
+  })();
+
+  // Data Explorer: parse lakeice-measurements.xlsx and render table + chart
+  (function(){
+    const tableWrap = document.getElementById('dataTableWrap');
+    const chartEl = document.getElementById('dataChart');
+    const reloadBtn = document.getElementById('reloadData');
+    if(!tableWrap || !chartEl) return;
+
+    async function fetchAndParse(){
+      try{
+        const res = await fetch('lakeice-measurements.xlsx');
+        if(!res.ok) throw new Error('Failed to fetch XLSX: ' + res.status);
+        const ab = await res.arrayBuffer();
+        const wb = XLSX.read(ab, {type:'array'});
+        const firstSheetName = wb.SheetNames[0];
+        const sheet = wb.Sheets[firstSheetName];
+        const rows = XLSX.utils.sheet_to_json(sheet, {header:1});
+        if(!rows || rows.length===0) {
+          tableWrap.innerHTML = '<p>No data found in spreadsheet.</p>';
+          return;
+        }
+
+        // Render HTML table
+        const headers = rows[0];
+        const dataRows = rows.slice(1);
+        const table = document.createElement('table');
+        table.className = 'data-table';
+        const thead = document.createElement('thead');
+        const trh = document.createElement('tr');
+        headers.forEach(h => { const th = document.createElement('th'); th.textContent = h||''; trh.appendChild(th); });
+        thead.appendChild(trh);
+        table.appendChild(thead);
+        const tbody = document.createElement('tbody');
+        dataRows.forEach(r => {
+          const tr = document.createElement('tr');
+          for(let i=0;i<headers.length;i++){ const td = document.createElement('td'); td.textContent = r[i]===undefined?'':r[i]; tr.appendChild(td); }
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        tableWrap.innerHTML = '';
+        tableWrap.appendChild(table);
+
+        // Choose label column (first) and numeric column (first column with numeric values)
+        const labels = dataRows.map(r => (r[0]!==undefined? String(r[0]) : ''));
+        let valueCol = -1;
+        for(let c=1;c<headers.length;c++){
+          const colVals = dataRows.map(r => r[c]);
+          const numericCount = colVals.reduce((acc,v)=> acc + (v!==undefined && v!=='' && !isNaN(Number(v))?1:0), 0);
+          if(numericCount >= Math.floor(dataRows.length*0.6)) { valueCol = c; break; }
+        }
+        if(valueCol===-1){
+          // fallback: try first column after labels
+          valueCol = headers.length>1?1:0;
+        }
+
+        const dataValues = dataRows.map(r => Number(r[valueCol])||0);
+        const seriesLabel = headers[valueCol] || 'Value';
+
+        // Render Chart.js line chart
+        if(window._blueskyxChart) window._blueskyxChart.destroy();
+        window._blueskyxChart = new Chart(chartEl.getContext('2d'), {
+          type: 'line',
+          data: { labels: labels, datasets: [{ label: seriesLabel, data: dataValues, borderColor: 'rgba(30,144,255,0.95)', backgroundColor: 'rgba(30,144,255,0.12)', tension:0.2 }] },
+          options: { responsive:true, maintainAspectRatio:false, scales: { x:{ display:true }, y:{ beginAtZero:false } } }
+        });
+
+      }catch(err){
+        tableWrap.innerHTML = '<p>Error loading spreadsheet: '+(err.message||err)+'</p>';
+        console.error(err);
+      }
+    }
+
+    fetchAndParse();
+    if(reloadBtn) reloadBtn.addEventListener('click', fetchAndParse);
+  })();
+</script>
+
+<!-- SheetJS and Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</body>
+</html>

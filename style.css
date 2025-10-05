@@ -1,0 +1,303 @@
+/* Reset & fonts */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: 'Poppins', sans-serif;
+height: 100vh;
+overflow: hidden; /* prevent scroll if video is full screen */
+}
+
+/* Background video */
+.bg-video {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -1; /* push video behind content */
+}
+
+/* Hide native play overlay controls on WebKit (Safari/Chrome) for background video */
+.bg-video::-webkit-media-controls-start-playback-button,
+.bg-video::-webkit-media-controls-overlay-play-button,
+.bg-video::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* Ensure the bg video cannot receive pointer events once playing (so no click overlay) */
+.bg-video.no-pointer {
+  pointer-events: none;
+}
+
+/* Navigation bar */
+nav {
+width: 100%;
+position: fixed;
+top: 0;
+left: 0;
+padding: 20px 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 10;
+background: rgba(0, 0, 0, 0.3); /* transparent overlay */
+backdrop-filter: blur(6px);
+opacity: 0;
+animation: fadeInDown 0.9s ease 0.1s forwards;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+height: 48px;
+width: auto;
+display: block;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.logo-title {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.logo-sub {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-top: 2px;
+  font-weight: 300;
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 40px;
+}
+
+.nav-links li a {
+text-decoration: none;
+color: #fff;
+font-weight: 500;
+transition: color 0.3s ease;
+letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
+color: #1e90ff; /* hover accent */
+}
+
+/* Utility: visually hide text but keep for screen readers */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+.nav-links {
+gap: 20px;
+}
+.logo {
+font-size: 20px;
+}
+}
+
+
+/* Fullscreen center for BLUESKYX */
+header {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+position: relative;
+z-index: 5;
+color: #fff;
+flex-direction: column;
+}
+
+/* BLUESKYX main logo style */
+.header-content h1 {
+font-size: 200px;
+font-weight: 400;
+letter-spacing: 30px;
+text-transform: uppercase;
+font-family: 'Orbitron', sans-serif;
+margin: 0;
+}
+
+/* "Explore NOW" link style */
+.header-content a {
+margin-top: 100px;
+top: 90%;
+transform: translate(60px);
+font-size: 30px;
+letter-spacing: 8px;
+color: #fff;
+text-decoration: none;
+font-weight: 300;
+font-family: 'Orbitron', sans-serif;
+transition: color 0.3s ease;
+flex-direction:column;
+justify-content: flex-end;
+}
+
+.header-content a::after {
+content: " →";
+font-size: 22px;
+}
+
+.header-content a:hover {
+color: #1e90ff; /* accent hover */
+}
+
+/* Entrance animations for header and nav */
+.header-content {
+  opacity: 0;
+  animation: fadeInUp 1.0s ease 0.3s forwards;
+}
+
+nav {
+  opacity: 0;
+  animation: fadeInDown 0.9s ease 0.1s forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Explore NOW fixed bottom button */
+.explore-now{
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  z-index: 999;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  /* floating animation */
+  animation: floatUp 3s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+@keyframes floatUp {
+  0% { transform: translateX(-50%) translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+  50% { transform: translateX(-50%) translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+  100% { transform: translateX(-50%) translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+}
+
+.explore-now:hover{
+  transform: translateX(-50%) translateY(-3px);
+  background: rgba(0,0,0,0.8);
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Container utility */
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+.section { padding: 80px 0; color: #fff; text-align: left; }
+.section h3 { font-size: 28px; margin-bottom: 12px; }
+.section p { opacity: 0.95; line-height: 1.6; }
+
+.hero-section { padding-top: 120px; padding-bottom: 120px; text-align: center; }
+.hero-section .container { max-width: 900px; }
+
+.header-content h1 { font-size: 88px; margin-bottom: 12px; font-family: 'Poppins', sans-serif; letter-spacing: 8px; }
+.header-content .lead { font-size: 20px; margin-bottom: 18px; opacity: 0.95; }
+
+/* CTA styles */
+.cta-button {
+  display: inline-block; background: rgba(30,144,255,0.95); color: #fff; padding: 14px 22px; border-radius: 28px;
+  text-decoration: none; font-weight: 600; box-shadow: 0 8px 30px rgba(30,144,255,0.12);
+}
+
+.cta-small {
+  display: inline-block; margin-top: 16px; background: rgba(255,255,255,0.06); color: #fff; padding: 10px 16px; border-radius: 8px; text-decoration: none;
+}
+
+.site-footer { padding: 24px 0; background: rgba(0,0,0,0.25); position: relative; z-index: 5; }
+.site-footer p { color: #ddd; text-align: center; }
+
+/* Mobile nav */
+.menu-toggle { display: none; background: transparent; border: none; color: #fff; font-size: 22px; cursor: pointer; }
+
+.nav-links { gap: 28px; }
+
+.nav-links.open { position: absolute; top: 76px; right: 20px; background: rgba(0,0,0,0.6); padding: 12px 18px; flex-direction: column; border-radius: 10px; }
+
+@media (max-width: 900px) {
+  .header-content h1 { font-size: 48px; }
+  .menu-toggle { display: block; }
+  .nav-links { display: none; position: absolute; right: 20px; top: 76px; flex-direction: column; gap: 10px; }
+  .nav-links.open { display: flex; }
+  .nav-links li a { padding: 8px 10px; }
+  body { overflow-x: hidden; }
+}
+
+/* Make sure video overlay button styles are above */
+#video-play-overlay button { font-family: 'Poppins', sans-serif; }
+
+/* Ensure header, main, footer sit above the background video */
+header, main, footer { position: relative; z-index: 5; }
+
+/* Lab embed styles */
+.lab-embed { margin-top: 18px; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.45); background: rgba(0,0,0,0.25); }
+.lab-embed iframe { width: 100%; height: 480px; border: 0; display: block; }
+.lab-fallback { padding: 18px; text-align: center; color: #fff; }
+
+@media (max-width: 768px) {
+  .lab-embed iframe { height: 320px; }
+}
+
+/* VR video player styles */
+.vr-video { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.video-player { width: 100%; max-width: 1100px; height: auto; border-radius: 8px; background: #000; box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+.vr-controls { display: flex; gap: 12px; align-items: center; }
+.vr-controls .cta-small { text-decoration: none; }
+
+.video-overlay { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.video-overlay .cta-button { pointer-events: auto; }
+
+/* Ensure the overlay covers the video area: place the video container relative */
+.vr-video { position: relative; }
+
+@media (max-width: 768px) {
+  .video-player { height: auto; }
+  .vr-controls { flex-direction: column; gap: 8px; }
+}
+
+
